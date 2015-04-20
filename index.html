@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bulkApp">
+  <head>
+    <script src="lib/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="js/BulkController.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Bulk</title>
+  </head>
+  <body>
+    <div class="container" ng-controller="BulkCtrl">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Price Calculator</h1>
+
+          <ul ng-repeat="item in bulk">
+            <li>Weight: {{item.weight}}</li>
+            <li>Freerange: {{item.freerange}}</li>
+            <li>Price: ${{item.price | number : 2}}</li>
+          </ul>
+
+        </div>
+        <div class="col-md-4">
+          <h2>New Order</h2>
+          <form ng-submit="addOrder()" class="form-inline" role="form">
+            <div class="form-group">
+              <input type="text" ng-model="weight" class="form-control" placeholder="Enter weight of chicken wanted" required>
+            </div>
+            <div class="form-group">
+              <label>Would you like free range chickens?</label>
+              <select type="text" ng-model="free_range" class="form-control">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+              <button type="submit" class="btn btn-primary">Enter</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
