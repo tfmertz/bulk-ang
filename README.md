@@ -6,4 +6,4 @@
 
 #### Description
 
-This app prints out a student roster from a controller.
+This app prints the price of a bulk order of chickens. A 1% discount is given for every 100 pounds purchased, up to 25%;
